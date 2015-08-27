@@ -32,11 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Euler.Euler_005</StartupObject>
+    <StartupObject>Euler.Euler_011</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,10 +50,40 @@
     <Compile Include="Euler_007.cs" />
     <Compile Include="Euler_011.cs" />
     <Compile Include="Euler_008.cs" />
+    <Compile Include="Euler_031.cs" />
+    <Compile Include="Euler_030.cs" />
+    <Compile Include="Euler_029.cs" />
+    <Compile Include="Euler_028.cs" />
+    <Compile Include="Euler_027.cs" />
+    <Compile Include="Euler_026.cs" />
+    <Compile Include="Euler_025.cs" />
+    <Compile Include="Euler_024.cs" />
+    <Compile Include="Euler_023.cs" />
+    <Compile Include="Euler_022.cs" />
+    <Compile Include="Euler_021.cs" />
+    <Compile Include="Euler_020.cs" />
+    <Compile Include="Euler_019.cs" />
+    <Compile Include="Euler_018.cs" />
+    <Compile Include="Euler_017.cs" />
+    <Compile Include="Euler_016.cs" />
+    <Compile Include="Euler_015.cs" />
+    <Compile Include="Euler_014.cs" />
+    <Compile Include="Euler_013.cs" />
     <Compile Include="Euler_012.cs" />
     <Compile Include="Euler_009.cs" />
     <Compile Include="Euler_010.cs" />
     <Compile Include="Euler_006.cs" />
+    <Compile Include="Euler_032_Version_2.cs" />
+    <Compile Include="Euler_032_Version_3.cs" />
+    <Compile Include="Euler_039.cs" />
+    <Compile Include="Euler_040.cs" />
+    <Compile Include="Euler_038.cs" />
+    <Compile Include="Euler_037.cs" />
+    <Compile Include="Euler_036.cs" />
+    <Compile Include="Euler_035.cs" />
+    <Compile Include="Euler_034.cs" />
+    <Compile Include="Euler_033.cs" />
+    <Compile Include="Euler_032.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

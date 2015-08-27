@@ -8,7 +8,7 @@ namespace Euler
 {
     class Euler_007
     {
-        void Main()
+        static void Main(string[] args)
         {
             // Count 2 right away
             int primeCount = 1;
@@ -30,9 +30,10 @@ namespace Euler
 
             Console.WriteLine(primeCount);
             Console.WriteLine(i);
+            Console.ReadKey();
         }
 
-        bool isPrime(int number)
+        static bool isPrime(int number)
         {
             for (int i = 2; i < number / 2; i++)
             {

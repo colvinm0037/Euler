@@ -8,7 +8,7 @@ namespace Euler
 {
     class Euler_006
     {
-        void Main()
+        static void Main(string[] args)
         {
             long sumOfSquares = 0;
             long squareOfSum = 0;
@@ -26,6 +26,7 @@ namespace Euler
 
             long total = squareOfSum - sumOfSquares;
             Console.WriteLine(total);
+            Console.ReadKey();
         }
     }
 }

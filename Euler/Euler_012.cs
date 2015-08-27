@@ -8,7 +8,7 @@ namespace Euler
 {
     class Euler_012
     {
-        void Main()
+        static void Main(string[] args)
         {
             //What is the value of the first triangle number to have over five hundred divisors?
 
@@ -21,11 +21,11 @@ namespace Euler
                     Console.WriteLine(i + ": " + triangle + ", factors: " + factors);
                     break;
                 }
-
             }
+            Console.ReadKey();
         }
 
-        int FindFactors(long triangle)
+        static int FindFactors(long triangle)
         {
             int factors = 0;
             for (int i = 1; i <= Math.Sqrt(triangle); i++)

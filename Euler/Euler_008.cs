@@ -8,7 +8,7 @@ namespace Euler
 {
     class Euler_008
     {
-        void Main()
+        static void Main(string[] args)
         {
             long max = 0;
 
@@ -42,9 +42,10 @@ namespace Euler
             }
 
             Console.WriteLine("MAX:" + max);
+            Console.ReadKey();
         }
 
-        long HandleDigits(String substring)
+        static long HandleDigits(String substring)
         {
             List<int> digits = new List<int>();
             long total = 1;

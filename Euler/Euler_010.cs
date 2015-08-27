@@ -8,7 +8,7 @@ namespace Euler
 {
     class Euler_010
     {
-        void Main()
+        static void Main(string[] args)
         {
             // Find the sum of all the primes below two million.
             bool[] primes = findPrimes(2000000);
@@ -23,9 +23,10 @@ namespace Euler
             }
 
             Console.WriteLine(sum);
+            Console.ReadKey();
         }
 
-        bool[] findPrimes(int number)
+        static bool[] findPrimes(int number)
         {
             bool[] myArray = new bool[number];
             for (int i = 2; i < number; i++)

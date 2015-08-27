@@ -8,7 +8,7 @@ namespace Euler
 {
     class Euler_009
     {
-        void Main()
+        static void Main(string[] args)
         {
             for (int i = 1; i < 1000; i++)
             {
@@ -29,6 +29,8 @@ namespace Euler
                     }
                 }
             }
-        }
+
+            Console.ReadKey();
+        }        
     }
 }
