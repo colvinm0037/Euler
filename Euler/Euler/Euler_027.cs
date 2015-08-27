@@ -51,7 +51,7 @@ namespace Euler
             }
 
             Console.WriteLine("Max Consecutive Primes: " + maxConsecutivePrimes);
-            Console.WriteLine("Product of a and b: " + product)
+            Console.WriteLine("Product of a and b: " + product);
         }
 
         bool[] findPrimes(long number)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_062
+    class Euler_070
     {
         public List<int> primeValues = null;
 

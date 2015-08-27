@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,26 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_004
+    public class Euler_004 : EulerProblem
     {
-        static void Main(string[] args)
+        private string _description = "A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.\n\nFind the largest palindrome made from the product of two 3-digit numbers.";
+
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 4; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        private string Main()
         {
             int max = 0;
 
@@ -26,12 +44,10 @@ namespace Euler
                 }
             }
 
-            Console.WriteLine(max);
-            Console.ReadKey();
+            return max.ToString();
         }
 
-
-        static bool isPalindrome(int number)
+        private static bool isPalindrome(int number)
         {
             String s = number.ToString();
             Stack stack = new Stack();
@@ -49,6 +65,6 @@ namespace Euler
             }
 
             return true;
-        }
+        }        
     }
 }

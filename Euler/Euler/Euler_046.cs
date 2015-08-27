@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_041
+    class Euler_046
     {
         void Main()
         {
