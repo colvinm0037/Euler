@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,32 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_015
+    public class Euler_015 : IEulerProblem
     {
-        void Main()
+        private string _description = "Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner." +
+                                      "\n\nHow many such routes are there through a 20×20 grid?";
+
+        public string Run()
         {
-            Console.WriteLine(CalcRoute(20));
+            return Main();
         }
 
-        long CalcRoute(long cubeSize)
+        public int Number
+        {
+            get { return 15; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        private string Main()
+        {
+           return CalcRoute(20).ToString();
+        }
+
+        private long CalcRoute(long cubeSize)
         {
             long[] L = new long[cubeSize];
             for (long a = 0; a < L.Length; a++)
@@ -35,7 +54,6 @@ namespace Euler
             }
 
             return L[cubeSize - 1];
-        }
-
+        }        
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Euler.Euler
 {
-    public interface EulerProblem
+    public interface IEulerProblem
     {
         string Run();
 

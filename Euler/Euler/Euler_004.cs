@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    public class Euler_004 : EulerProblem
+    public class Euler_004 : IEulerProblem
     {
         private string _description = "A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.\n\nFind the largest palindrome made from the product of two 3-digit numbers.";
 

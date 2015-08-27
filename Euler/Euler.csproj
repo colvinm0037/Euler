@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Euler.Euler.Interface</StartupObject>
+    <StartupObject>Euler.Euler.UserInterface</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -50,7 +50,7 @@
     <Compile Include="Challenges\Challenge_Week_4.cs" />
     <Compile Include="Challenges\Challenge_Week_6_Level_2 .cs" />
     <Compile Include="Challenges\Challenge_Week_6_Level_1.cs" />
-    <Compile Include="Euler\EulerProblem.cs" />
+    <Compile Include="Euler\IEulerProblem.cs" />
     <Compile Include="Euler\Euler_004.cs" />
     <Compile Include="Euler\Euler_005.cs" />
     <Compile Include="Euler\Euler_007.cs" />
@@ -116,7 +116,7 @@
     <Compile Include="Euler\Euler_521_Version_2.cs" />
     <Compile Include="Euler\Euler_062.cs" />
     <Compile Include="Euler\Euler_052.cs" />
-    <Compile Include="Euler\Interface.cs" />
+    <Compile Include="Euler\UserInterface.cs" />
     <Compile Include="Notes\Threads.cs" />
     <Compile Include="Notes\Strategies.cs" />
     <Compile Include="Notes\Primes.cs" />

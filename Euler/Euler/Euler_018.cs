@@ -8,6 +8,6 @@ namespace Euler
 {
     class Euler_018
     {
-        
+        // TODO: I should have this in a challenge problem
     }
 }

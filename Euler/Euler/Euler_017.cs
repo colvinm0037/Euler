@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,28 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_017
+    class Euler_017 : IEulerProblem
     {
-        void Main()
+        private string _description = "If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total." + 
+                                      "\n\nIf all the numbers from 1 to 1000 (one thousand) inclusive were written out in words, how many letters would be used?" + 
+                                      "\n\nNOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of \"and\" when writing out numbers is in compliance with British usage.";
+
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 17; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        private string Main()
         {
             string[] digits = new string[] { "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
             string[] teens = new string[] { "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
@@ -59,13 +79,14 @@ namespace Euler
                     }
                 }
 
-                Console.WriteLine(word);
+              //  Console.WriteLine(word);
                 sum += word.Length;
             }
 
-            Console.WriteLine(onethousand);
+            //Console.WriteLine(onethousand);
             sum += onethousand.Length;
-            Console.WriteLine(sum);
-        }
+            //Console.WriteLine(sum);
+            return sum.ToString();
+        }    
     }
 }

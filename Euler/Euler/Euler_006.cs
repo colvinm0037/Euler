@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    public class Euler_006 : EulerProblem
+    public class Euler_006 : IEulerProblem
     {
-        private string _description = "The sum of the squares of the first ten natural numbers is,\n\n12 + 22 + ... + 102 = 385\n\nThe square of the sum of the first ten natural numbers is,\n\n(1 + 2 + ... + 10)2 = 552 = 3025\n\nHence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.\n\nFind the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.";
+        private string _description = "The sum of the squares of the first ten natural numbers is,\n\n1^2 + 2^2 + ... + 10^2 = 385\n\nThe square of the sum of the first ten natural numbers is,\n\n(1 + 2 + ... + 10)^2 = 55^2 = 3025\n\nHence the " + 
+            "difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.\n\nFind the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.";
 
         public string Run()
         {

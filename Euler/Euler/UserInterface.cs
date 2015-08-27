@@ -6,26 +6,27 @@ using System.Threading.Tasks;
 
 namespace Euler.Euler
 {
-    public class Interface
+    public class UserInterface
     {       
         static void Main(string[] args)
         {
-            var accessors = typeof(EulerProblem)
-            .Assembly
-            .GetTypes()
-            .Where(t => !t.IsInterface && typeof(EulerProblem).IsAssignableFrom(t))
-            .Select(a => (EulerProblem) Activator.CreateInstance(a))
+            // Use reflection to grab all classes that implement IEulerProblem
+            var eulerImplementations = typeof(IEulerProblem)
+            .Assembly.GetTypes()
+            .Where(t => !t.IsInterface && typeof(IEulerProblem).IsAssignableFrom(t))
+            .Select(a => (IEulerProblem) Activator.CreateInstance(a))
             .ToList();
 
+            // User Interface loop
             Console.WriteLine("Welcome to Project Euler");
             while (true)
             {                
                 Console.Write("Please enter a number [q to quit]: ");                
                 string input = Console.ReadLine();
                 if (input == "q") break;
-                
-                Console.WriteLine();
-                var result = accessors.Where(a => a.Number == int.Parse(input)).FirstOrDefault();
+
+                Console.Clear();
+                var result = eulerImplementations.Where(a => a.Number == int.Parse(input)).FirstOrDefault();
 
                 if (result == null)
                 {
@@ -33,10 +34,8 @@ namespace Euler.Euler
                 }
                 else
                 {
-                    Console.WriteLine(result.Description);
-                    Console.WriteLine();
-                    Console.WriteLine("The solution: " + result.Run());
-                    Console.WriteLine();
+                    Console.WriteLine("{0}\n", result.Description);
+                    Console.WriteLine("The solution: {0}\n", result.Run());
                 }
             }
         } 
