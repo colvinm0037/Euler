@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,30 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_031
+    class Euler_031 : IEulerProblem
     {
-        void Main()
+        private string _description = "In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:" +
+            "\n\n1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p)." +
+            "\nIt is possible to make £2 in the following way:" +
+            "\n\n1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p" +
+            "\nHow many different ways can £2 be made using any number of coins?";
+
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 31; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        private string Main()
         {
             // In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:
 
@@ -20,12 +42,12 @@ namespace Euler
 
             int[] values = new int[] { 1, 2, 5, 10, 20, 50, 100, 200 };
 
-            int count = sum(200);
+            int count = Sum(200);
             count++; // add the 200p option
-            Console.WriteLine(count);
+            return count.ToString();
         }
 
-        int sum(int n)
+        private static int Sum(int n)
         {
             int count = 0;
             for (int g = 0; g <= n / 100; g++)
@@ -55,6 +77,6 @@ namespace Euler
                 }
             }
             return count;
-        }
+        }        
     }
 }

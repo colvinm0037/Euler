@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,28 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_034
+    public class Euler_034 : IEulerProblem
     {
-        void Main()
+        private string _description = "145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145." + 
+            "\n\nFind the sum of all numbers which are equal to the sum of the factorial of their digits." + 
+            "\n\nNote: as 1! = 1 and 2! = 2 are not sums they are not included.";
+
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 34; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        private string Main()
         {
             // 145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
             // Find the sum of all numbers which are equal to the sum of the factorial of their digits.
@@ -31,7 +51,7 @@ namespace Euler
                     finalSum += i;
                 }
             }
-            Console.WriteLine("Sum: " + finalSum);
-        }
+            return finalSum.ToString();
+        }        
     }
 }

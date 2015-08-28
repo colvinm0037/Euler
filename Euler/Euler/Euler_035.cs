@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,28 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_035
+    public class Euler_035 : IEulerProblem
     {
-        void Main()
+        private string _description = "The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime." +
+            "\n\nThere are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97." +
+            "\n\nHow many circular primes are there below one million?";
+
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 35; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        private string Main()
         {
             // How many circular primes are there below one million?
 
@@ -40,10 +60,10 @@ namespace Euler
                     }
                 }
             }
-            Console.WriteLine("Count: " + count);
+            return count.ToString();
         }
 
-        bool[] findPrimes(int number)
+        private static bool[] findPrimes(int number)
         {
             bool[] myArray = new bool[number];
             for (int i = 2; i < number; i++)
@@ -59,6 +79,6 @@ namespace Euler
             }
 
             return myArray;
-        }
+        }        
     }
 }
