@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,27 +7,46 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_041
+    public class Euler_041 : IEulerProblem
     {
-        List<long> numbers = new List<long>();
+        private List<long> numbers = new List<long>();
+        private string _description = "We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once. For example, 2143 is a 4-digit pandigital and is also prime." +
+            "\n\nWhat is the largest n-digit pandigital prime that exists?";
 
-        void Main()
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 41; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        private string Main()
         {
             // We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
             // What is the largest n-digit pandigital prime that exists?
 
+            string result = "";
             permutation("", "1234567");
             foreach (long number in numbers.OrderByDescending(x => x))
             {
                 if (IsPrime(number))
                 {
-                    Console.WriteLine("Prime: " + number);
+                    result = number.ToString();
                     break;
                 }
             }
+            return result;
         }
 
-        void permutation(String prefix, String str)
+        private void permutation(String prefix, String str)
         {
             int n = str.Length;
             if (n == 0)
@@ -40,7 +60,7 @@ namespace Euler
             }
         }
 
-        bool IsPrime(long number)
+        private static bool IsPrime(long number)
         {
             if (number % 2 == 0)
                 return false;
@@ -52,6 +72,6 @@ namespace Euler
             }
 
             return true;
-        }
+        }   
     }
 }

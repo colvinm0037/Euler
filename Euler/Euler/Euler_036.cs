@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,28 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_036
+    public class Euler_036 : IEulerProblem
     {
-        void Main()
+        private string _description = "The decimal number, 585 = 10010010012 (binary), is palindromic in both bases." +
+            "\n\nFind the sum of all numbers, less than one million, which are palindromic in base 10 and base 2." +
+            "\n\n(Please note that the palindromic number, in either base, may not include leading zeros.)"
+
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 36; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        private string Main()
         {
             long sum = 0;
             for (int i = 0; i < 1000000; i++)
@@ -20,10 +40,10 @@ namespace Euler
                     sum += i;
                 }
             }
-            Console.WriteLine("Sum: " + sum);
+            return sum.ToString();
         }
 
-        bool isPalindrome<T>(T number)
+        private static bool isPalindrome<T>(T number)
         {
             String s = number.ToString();
             Stack stack = new Stack();
@@ -37,8 +57,7 @@ namespace Euler
                 if (s[i] != ch)
                     return false;
             }
-
             return true;
-        }
+        }        
     }
 }

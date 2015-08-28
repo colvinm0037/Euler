@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,29 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_039
+    public class Euler_039 : IEulerProblem
     {
-        void Main()
-        {
-            // If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120.
-            // {20,48,52}, {24,45,51}, {30,40,50}
-            // For which value of p ≤ 1000, is the number of solutions maximised?
+        private string _description = "If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120." + 
+            "\n\n{20,48,52}, {24,45,51}, {30,40,50}" + 
+            "\n\nFor which value of p ≤ 1000, is the number of solutions maximised?";
 
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 39; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        private string Main()
+        {
             int maxCount = 0;
             int maxP = 0;
 
@@ -37,12 +53,12 @@ namespace Euler
                 {
                     maxCount = count;
                     maxP = p;
-                    Console.WriteLine(p);
                 }
             }
 
-            Console.WriteLine("Count: " + maxCount);
-            Console.WriteLine("p: " + maxP);
-        }
+            //Console.WriteLine("Count: " + maxCount);
+            //Console.WriteLine("p: " + maxP);
+            return maxP.ToString();
+        }       
     }
 }
