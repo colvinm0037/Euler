@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,18 +7,32 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_051
+    class Euler_051 : IEulerProblem
     {
-        bool[] primes = null;
+        private bool[] primes = null;
+        private string _description = "By replacing the 1st digit of the 2-digit number *3, it turns out that six of the nine possible values: 13, 23, 43, 53, 73, and 83, are all prime." +
+                        "\n\nBy replacing the 3rd and 4th digits of 56**3 with the same digit, this 5-digit number is the first example having seven primes among the ten generated numbers, yielding the family:" +
+                        "\n\n56003, 56113, 56333, 56443, 56663, 56773, and 56993. Consequently 56003, being the first member of this family, is the smallest prime with this property." +
+                        "\n\nFind the smallest prime which, by replacing part of the number (not necessarily adjacent digits) with the same digit, is part of an eight prime value family.";
 
-        void Main()
+        public string Run()
         {
-            //	By replacing the 1st digit of the 2-digit number *3, it turns out that six of the nine possible values: 13, 23, 43, 53, 73, and 83, are all prime.
-            //	By replacing the 3rd and 4th digits of 56**3 with the same digit, this 5-digit number is the first example having seven primes among the ten generated numbers, yielding the family:
-            //	56003, 56113, 56333, 56443, 56663, 56773, and 56993. Consequently 56003, being the first member of this family, is the smallest prime with this property.
-            //	Find the smallest prime which, by replacing part of the number (not necessarily adjacent digits) with the same digit, is part of an eight prime value family.
+            return Main();
+        }
 
-            // we can replace any number of digits
+        public int Number
+        {
+            get { return 51; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        string Main()
+        {
+            // We can replace any number of digits
 
             int n = 250000;
             primes = findPrimes(n);
@@ -34,15 +49,16 @@ namespace Euler
                 {
                     if (primeList.Count() >= 8)
                     {
-                        Console.Write("This Prime: " + prime + ", Primes: ");
-                        foreach (int i in primeList)
-                            Console.Write(i + ", ");
-                        Console.WriteLine();
+                        // Console.Write("This Prime: " + prime + ", Primes: ");
+                        // foreach (int i in primeList)
+                        //     Console.Write(i + ", ");
+                        // Console.WriteLine();
+                        return primeList.First().ToString();
                     }
                 }
-
-
             }
+
+            return "";
         }
 
         List<List<int>> FindTwos(int prime)

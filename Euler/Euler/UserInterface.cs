@@ -35,6 +35,7 @@ namespace Euler.Euler
                 else
                 {
                     Console.WriteLine("{0}\n", result.Description);
+                    Console.WriteLine("Calculating...");
                     Console.WriteLine("The solution: {0}\n", result.Run());
                 }
             }

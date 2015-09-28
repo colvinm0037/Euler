@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,17 +7,33 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_050
+    public class Euler_050 : IEulerProblem
     {
-        void Main()
+        // TODO: This problem takes too long to run.
+
+        private string _description = "The prime 41, can be written as the sum of six consecutive primes:" +
+                   "\n41 = 2 + 3 + 5 + 7 + 11 + 13" +
+                   "\nThis is the longest sum of consecutive primes that adds to a prime below one-hundred." +
+                 "\n\nThe longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953." +
+                   "\nWhich prime, below one-million, can be written as the sum of the most consecutive primes?";
+
+        public string Run()
         {
-            // The prime 41, can be written as the sum of six consecutive primes:
-            // 41 = 2 + 3 + 5 + 7 + 11 + 13
-            // This is the longest sum of consecutive primes that adds to a prime below one-hundred.
+            return Main();
+        }
 
-            // The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
-            // Which prime, below one-million, can be written as the sum of the most consecutive primes?
+        public int Number
+        {
+            get { return 50; }
+        }
 
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        string Main()
+        {
             int n = 1000000;
             int maxTerms = 1;
             int finalPrime = 0;
@@ -26,8 +43,7 @@ namespace Euler
 
             foreach (int prime in primeValues)
             {
-                Console.WriteLine(prime);
-
+            
                 var subPrimes = primeValues.Where(p => p <= prime).ToList();
                 foreach (int startingPrime in subPrimes)
                 {
@@ -64,8 +80,7 @@ namespace Euler
                 }
             }
 
-            Console.WriteLine("Prime number: " + finalPrime);
-            Console.WriteLine("Consecutive Terms: " + maxTerms);
+            return finalPrime.ToString();
         }
 
         bool[] findPrimes(long number)

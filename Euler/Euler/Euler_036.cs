@@ -12,7 +12,7 @@ namespace Euler
     {
         private string _description = "The decimal number, 585 = 10010010012 (binary), is palindromic in both bases." +
             "\n\nFind the sum of all numbers, less than one million, which are palindromic in base 10 and base 2." +
-            "\n\n(Please note that the palindromic number, in either base, may not include leading zeros.)"
+            "\n\n(Please note that the palindromic number, in either base, may not include leading zeros.)";
 
         public string Run()
         {

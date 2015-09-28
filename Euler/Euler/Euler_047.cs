@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,25 +7,35 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_047
+    public class Euler_047 : IEulerProblem
     {
-        List<int> primeValues = new List<int>();
+        private List<int> primeValues = new List<int>();
+        private string _description = "The first two consecutive numbers to have two distinct prime factors are:" +           
+           "\n\n14 = 2 × 7" +
+           "\n15 = 3 × 5" +           
+           "\n\nThe first three consecutive numbers to have three distinct prime factors are:" +           
+           "\n\n644 = 2² × 7 × 23" +
+           "\n645 = 3 × 5 × 43" +
+           "\n646 = 2 × 17 × 19." +           
+           "\n\nFind the first four consecutive integers to have four distinct prime factors. What is the first of these numbers?";
 
-        void Main()
+        public string Run()
         {
-            //The first two consecutive numbers to have two distinct prime factors are:
-            //
-            //14 = 2 × 7
-            //15 = 3 × 5
-            //
-            //The first three consecutive numbers to have three distinct prime factors are:
-            //
-            //644 = 2² × 7 × 23
-            //645 = 3 × 5 × 43
-            //646 = 2 × 17 × 19.
-            //
-            //Find the first four consecutive integers to have four distinct prime factors. What is the first of these numbers?
+            return Main();
+        }
 
+        public int Number
+        {
+            get { return 47; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        String Main()
+        {            
             long n = 250000;
             int factors = 4;
 
@@ -41,13 +52,16 @@ namespace Euler
 
                     if (count == factors)
                     {
-                        Console.WriteLine("Found: " + (i - (factors - 1)));
-                        break;
+                        
+                        return (i - (factors - 1)).ToString();                        
                     }
                 }
                 else
+                {
                     count = 0;
+                }
             }
+            return "";
         }
 
         bool HasUniquePrimeFactors(long prime, int factors)
@@ -92,5 +106,6 @@ namespace Euler
 
             return myArray;
         }
+        
     }
 }
