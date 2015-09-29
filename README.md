@@ -12,9 +12,16 @@ I originally wrote these all as completely separate LinqPad files. The purpose o
 easy to maintain and consistent framework with a user interface that displays the description of each problem and then calls 
 my code to calculate the solution for the problem.
 
-TODO:
-Finish implementing remaining questions to use new interface.
-Add test cases to ensure that all problems are calculating the correct answer.
-Pull commonly used methods like 'FindPrimes' out of problems and put in seperate methods for useful functions.
-Ensure that problems which use a .txt file for data are working.
-Some questions take a long time to run the algorithm, work on making these more effecient.
+######TODO:
++Finish implementing remaining questions to use new interface.
++Add test cases to ensure that all problems are calculating the correct answer.
++Pull commonly used methods like 'FindPrimes' out of problems and put in seperate methods for useful functions.
++Ensure that problems which use a .txt file for data are working.
++Some questions take a long time to run the algorithm, work on making these more effecient.
+
+######Notes on Project Euler:
+Project Euler is a list of usually math related questions that are meant to be solved by writing a program in any language. 
+The first few questions are easy and involve things like prime numbers and fibonacci series. Beyond there the questions become more complex and interesting. Typically there is a niave approach to the problem that will take a long time to run, 
+the real trick is coming up with an effecient solution that will run quickly.
+
+https://projecteuler.net/
