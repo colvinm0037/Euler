@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -7,9 +8,27 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_056
+    public class Euler_056 : IEulerProblem
     {
-        void Main()
+        private string _description = "A googol (10100) is a massive number: one followed by one-hundred zeros; 100100 is almost unimaginably large: one followed by two-hundred zeros. Despite their size, the sum of the digits in each number is only 1." +
+                        "\n\nConsidering natural numbers of the form, ab, where a, b< 100, what is the maximum digital sum?";
+
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 56; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        string Main()
         {
             //Considering natural numbers of the form, ab, where a, b < 100, what is the maximum digital sum?
             long max = 0;
@@ -29,7 +48,7 @@ namespace Euler
                 }
             }
 
-            Console.WriteLine("Max Digital Sum: " + max);
+            return max.ToString();
         }
     }
 }

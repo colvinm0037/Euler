@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
+    // This version of problem 058 not being used
+
     class Euler_058
     {
         bool[] primes = null;

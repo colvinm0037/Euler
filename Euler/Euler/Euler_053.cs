@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -7,14 +8,33 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_053
+    public class Euler_053 : IEulerProblem
     {
-        void Main()
-        {
-            // nCr =	n! / r!(n−r)!, where r ≤ n, n! = n×(n−1)×...×3×2×1, and 0! = 1.
-            // It is not until n = 23, that a value exceeds one-million: 23C10 = 1144066.	
-            // How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are greater than one-million?
+        private string _description = "There are exactly ten ways of selecting three from five, 12345:" +
+            "\n\n123, 124, 125, 134, 135, 145, 234, 235, 245, and 345" +
+            "\n\nIn combinatorics, we use the notation, 5C3 = 10." +
+            "\n\nIn general," +
+            "\n\nnCr = n! / r!(n−r)!, where r ≤ n, n! = n×(n−1)×...×3×2×1, and 0! = 1." +
+            "\n\nIt is not until n = 23, that a value exceeds one-million: 23C10 = 1144066." +
+            "\n\nHow many, not necessarily distinct, values of nCr, for 1 ≤ n ≤ 100, are greater than one-million?";
 
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 53; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        string Main()
+        {
             int count = 0;
 
             for (int n = 1; n <= 100; n++)
@@ -23,14 +43,13 @@ namespace Euler
                 {
                     BigInteger amount = (Factorial(n)) / ((Factorial(r)) * (Factorial(n - r)));
                     if (amount > 1000000)
-                    {
-                        Console.WriteLine(n + ", " + r + ", " + amount);
+                    {            
                         count++;
                     }
                 }
             }
-
-            Console.WriteLine("Count: " + count);
+                        
+            return count.ToString();
         }
 
         BigInteger Factorial(BigInteger number)
