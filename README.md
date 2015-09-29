@@ -13,11 +13,11 @@ easy to maintain and consistent framework with a user interface that displays th
 my code to calculate the solution for the problem.
 
 ######TODO:
-+Finish implementing remaining questions to use new interface.
-+Add test cases to ensure that all problems are calculating the correct answer.
-+Pull commonly used methods like 'FindPrimes' out of problems and put in seperate methods for useful functions.
-+Ensure that problems which use a .txt file for data are working.
-+Some questions take a long time to run the algorithm, work on making these more effecient.
+1. Finish implementing remaining questions to use new interface.
+2. Add test cases to ensure that all problems are calculating the correct answer.
+3. Pull commonly used methods like 'FindPrimes' out of problems and put in seperate methods for useful functions.
+4. Ensure that problems which use a .txt file for data are working.
+4. Some questions take a long time to run the algorithm, work on making these more effecient.
 
 ######Notes on Project Euler:
 Project Euler is a list of usually math related questions that are meant to be solved by writing a program in any language. 
