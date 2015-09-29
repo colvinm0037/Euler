@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,29 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_069
+    public class Euler_069 : IEulerProblem
     {
-        public List<int> primeValues = null;
+        private List<int> primeValues = null;
+        private string _description = "Euler's Totient function, φ(n) [sometimes called the phi function], is used to determine the number of numbers less than n which are relatively prime to n. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, φ(9)=6." +
+            "\n\nIt can be seen that n=6 produces a maximum n/φ(n) for n ≤ 10." +
+            "\n\nFind the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.";
 
-        void Main()
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 69; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        string Main()
         {
             // Find the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.
 
@@ -33,12 +52,13 @@ namespace Euler
                 {
                     maxRatio = ratio;
                     finalN = n;
-                    Console.WriteLine(n + ", " + coprimes + ", " + ratio);
+                    //Console.WriteLine(n + ", " + coprimes + ", " + ratio);
                 }
             }
 
-            Console.WriteLine("Ratio: " + maxRatio);
-            Console.WriteLine("n: " + finalN);
+            //Console.WriteLine("Ratio: " + maxRatio);
+            //Console.WriteLine("n: " + finalN);
+            return finalN.ToString();
         }
 
         int PhiOf(int number)

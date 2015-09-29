@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,29 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_070
+    public class Euler_070
     {
-        public List<int> primeValues = null;
+        // TODO: Needs some work
 
-        void Main()
+        public List<int> primeValues = null;
+        private string _description = "";
+
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 70; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        string Main()
         {
             // Find the value of n, 1 < n < 10^7, for which φ(n) is a permutation of n and the ratio n/φ(n) produces a minimum.
 
@@ -28,7 +47,6 @@ namespace Euler
 
             for (int i = 3; i < n; i = i + 2)
             {
-
                 int phi = 0;
 
                 if (primes[i])
@@ -71,7 +89,7 @@ namespace Euler
 
             Console.WriteLine("Final ratio: " + minRatio);
             Console.WriteLine("Final n: " + finalN);
-
+            return finalN.ToString();
         }
 
         int PhiOf(int number)

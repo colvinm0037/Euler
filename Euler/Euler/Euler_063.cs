@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -7,9 +8,27 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_063
+    public class Euler_063 : IEulerProblem
     {
-        void Main()
+        string _description = "The 5-digit number, 16807=75, is also a fifth power. Similarly, the 9-digit number, 134217728=89, is a ninth power." + 
+            "\n\nHow many n-digit positive integers exist which are also an nth power?";
+
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 63; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        string Main()
         {
             // The 5-digit number, 16807=7^5, is also a fifth power. Similarly, the 9-digit number, 134217728=8^9, is a ninth power.
             // How many n-digit positive integers exist which are also an nth power?
@@ -24,13 +43,13 @@ namespace Euler
                     int length = value.ToString().Length;
                     if (length == pow)
                     {
-                        Console.WriteLine(baseValue + "^" + pow + " = " + value);
+                        //Console.WriteLine(baseValue + "^" + pow + " = " + value);
                         count++;
                     }
                 }
             }
-
-            Console.WriteLine("Total Count: " + count);
+            
+            return count.ToString();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,16 +7,29 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_060
+    public class Euler_060: IEulerProblem
     {
-        bool[] primes;
+        private bool[] primes;
+        private string _description = "The primes 3, 7, 109, and 673, are quite remarkable. By taking any two primes and concatenating them in any order the result will always be prime. For example, taking 7 and 109, both 7109 and 1097 are prime. The sum of these four primes, 792, represents the lowest sum for a set of four primes with this property." +
+                "\n\nFind the lowest sum for a set of five primes for which any two primes concatenate to produce another prime.";
 
-        void Main()
+        public string Run()
         {
-	        // The primes 3, 7, 109, and 673, are quite remarkable.By taking any two primes and concatenating them in any order the result will always be prime.
-	        // For example, taking 7 and 109, both 7109 and 1097 are prime. The sum of these four primes, 792, represents the lowest sum for a set of four primes with this property.
-	        // Find the lowest sum for a set of five primes for which any two primes concatenate to produce another prime.
+            return Main();
+        }
 
+        public int Number
+        {
+            get { return 60; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        string Main()
+        {
 	        primes = findPrimes(100000000);
 	        var primeValues = Enumerable.Range(0, 10000).Where(x => primes[x]).ToList();
 
@@ -36,16 +50,15 @@ namespace Euler
 					        foreach (int m in primeValues.Where(x => x > l))
 					        {
 						        if (IsMagical(new List<int> { i, j, k, l, m }))
-						        {
-							        Console.WriteLine(i + " " + j + " " + k + " " + l + " " + m);
-							        Console.WriteLine(i + j + k + l + m);
-							        return;
+						        {							      
+                                    return (i + j + k + l + m).ToString();							        
 						        }
 					        }
 				        }
 			        }
 		        }
 	        }
+            return "";
         }
 
         bool[] findPrimes(int number)

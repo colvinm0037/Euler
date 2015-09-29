@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Euler.Euler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,17 +7,34 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_062
+    public class Euler_062
     {
-        void Main()
-        {
-            // The cube, 41063625 (345^3), can be permuted to produce two other cubes: 56623104 (384^3) and 66430125 (405^3).
-            // In fact, 41063625 is the smallest cube which has exactly three permutations of its digits which are also cube.
-            // Find the smallest cube for which exactly five permutations of its digits are cube.
+        // TODO: Not working
 
+        string _description = "The cube, 41063625 (345^3), can be permuted to produce two other cubes: 56623104 (384^3) and 66430125 (405^3)." +
+                            "\n\nIn fact, 41063625 is the smallest cube which has exactly three permutations of its digits which are also cube." + 
+                            "\n\nFind the smallest cube for which exactly five permutations of its digits are cube.";
+        
+        public string Run()
+        {
+            return Main();
+        }
+
+        public int Number
+        {
+            get { return 62; }
+        }
+
+        public string Description
+        {
+            get { return _description; }
+        }
+
+        string Main()
+        {
             // We don't necessarily need to look at every permutation
             // Just need to be find every cube that contains the exact same characters
-            // There is still ways to improve the speed of this by keeping track of permutations?
+            // There is still ways to improve the speed of this by keeping track of permutations?";
 
             HashSet<long> cubes = new HashSet<long>();
             int max = 20000;
@@ -65,6 +83,7 @@ namespace Euler
             Console.WriteLine("Cube permutations: " + maxCount);
             Console.WriteLine("Cube: " + finalCube);
             Console.WriteLine("Cubic: " + Math.Pow(finalCube, (1.0 / 3.0)));
+            return "";
         }
 
         // Elegant solution I found online
@@ -74,5 +93,6 @@ namespace Euler
         //                .Where(grouping => grouping.Count() == 5)
         //                .SelectMany(grouping => grouping)
         //                .Min();
+        
     }
 }
