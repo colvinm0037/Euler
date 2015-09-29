@@ -21,7 +21,7 @@ my code to calculate the solution for the problem.
 
 ######Notes on Project Euler:
 Project Euler is a list of usually math related questions that are meant to be solved by writing a program in any language. 
-The first few questions are easy and involve things like prime numbers and fibonacci series. Beyond there the questions become more complex and interesting. Typically there is a niave approach to the problem that will take a long time to run, 
+The first few questions are easy and involve things like prime numbers and fibonacci series. Beyond there the questions become more complex and interesting. Typically there is a naive approach to the problem that will take a long time to run, 
 the real trick is coming up with an effecient solution that will run quickly.
 
 https://projecteuler.net/
