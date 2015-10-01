@@ -35,30 +35,15 @@ namespace Euler
 
             for (int i = 1; i < 10000; i++)
             {
-                int result = SumOfProperDivisors(i);
-                int amicable = SumOfProperDivisors(result);
+                int result = UsefulFunctions.SumOfProperDivisors(i);
+                int amicable = UsefulFunctions.SumOfProperDivisors(result);
                 if (i == amicable && result != amicable)
                 {
                     sum += i;
-                 //   Console.WriteLine("Adding: " + i + ", " + amicable + ", " + result);
                 }
             }
 
             return sum.ToString();
         }
-
-        private int SumOfProperDivisors(int number)
-        {
-            int sum = 0;
-
-            for (int i = 1; i <= number / 2; i++)
-            {
-                if (number % i == 0)
-                {
-                    sum += i;
-                }
-            }
-            return sum;
-        }       
     }
 }

@@ -31,6 +31,8 @@ namespace Euler
 
         private string Main()
         {
+            // TODO: Fix file path hardcoding, add text file to project
+
             List<string> names = new List<string>();
             string line = null;
             try

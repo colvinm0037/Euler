@@ -70,7 +70,7 @@ namespace Euler
 
         bool isPrime(int number)
         {
-            if (number <= 1)
+            if (number < 2)
                 return false;
 
             if (number == 2)

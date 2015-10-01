@@ -33,8 +33,6 @@ namespace Euler
             long sum = 0;
             foreach (char ch in digits.ToString())
                 sum += (int)Char.GetNumericValue(ch);
-            //Console.WriteLine("Sum of digits: " + sum);
-            //Console.WriteLine("Number of digits: " + digits.ToString().Length);
             return sum.ToString();
         }        
     }

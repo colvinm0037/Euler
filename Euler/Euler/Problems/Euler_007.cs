@@ -36,7 +36,7 @@ namespace Euler
             {
                 i += 2;
 
-                if (isPrime(i))
+                if (UsefulFunctions.isPrime(i))
                 {
                     primeCount++;
                     if (primeCount == 10001)
@@ -46,19 +46,8 @@ namespace Euler
                 }
             }
 
-            // Console.WriteLine(primeCount);
-            // Console.WriteLine(i);
             return i.ToString();
         }
 
-        private static bool isPrime(int number)
-        {
-            for (int i = 2; i < number / 2; i++)
-            {
-                if (number % i == 0)
-                    return false;
-            }
-            return true;
-        }        
     }
 }

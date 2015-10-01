@@ -40,19 +40,17 @@ namespace Euler
         private string Main()
         {
             // What is the value of the first triangle number to have over five hundred divisors?
-            string result = null;
-
+            
             for (int i = 1; i < 500000; i++)
             {
                 long triangle = i * (i + 1) / 2;
                 int factors = FindFactors(triangle);
                 if (factors > 500)
-                {                    
-                    result = i + ": " + triangle + ", factors: " + factors;
-                    break;
+                {
+                    return triangle.ToString();
                 }
             }
-            return result;
+            return "";
         }
 
         private static int FindFactors(long triangle)

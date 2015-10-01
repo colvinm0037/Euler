@@ -40,9 +40,6 @@ namespace Euler
 
             squareOfSum *= squareOfSum;
 
-            //Console.WriteLine(sumOfSquares);
-            //Console.WriteLine(squareOfSum);
-
             long total = squareOfSum - sumOfSquares;
             return total.ToString();
         }        

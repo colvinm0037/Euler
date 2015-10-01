@@ -54,12 +54,9 @@ namespace Euler
             while (true)
             {
                 fibs[count] = fibs[count - 1] + fibs[count - 2];
-                //Console.WriteLine (fibs[count]);
-                //Console.WriteLine(fibs[count].ToString().Length);
 
                 if (fibs[count].ToString().Length >= 1000)
-                {
-                    Console.WriteLine("Count: " + count);
+                {                    
                     break;
                 }
                 count++;

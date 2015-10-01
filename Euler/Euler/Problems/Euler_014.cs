@@ -36,16 +36,18 @@ namespace Euler
         private string Main()
         {
             int max = 0;
+            int value = 0;
             for (int i = 2; i <= 1000000; i++)
             {
                 int sequence = FindCollatzNumbers(i);
                 if (sequence > max)
                 {
                     max = sequence;
+                    value = i;
                     //Console.WriteLine("i; " + i + ", max: " + max);
                 }
             }
-            return max.ToString();
+            return value.ToString();
         }
 
         private int FindCollatzNumbers(int number)

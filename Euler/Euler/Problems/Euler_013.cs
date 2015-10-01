@@ -242,7 +242,7 @@ namespace Euler
                 sum += digits;
 
             }
-            return sum.ToString();
+            return sum.ToString().Substring(0, 10);
         }
     }
 }

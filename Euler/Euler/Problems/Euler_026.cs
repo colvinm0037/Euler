@@ -65,9 +65,7 @@ namespace Euler
                     finalDenom = denom;
                 }
             }
-
-            //Console.WriteLine("Length of sequence: " + sequenceLength);
-            //Console.WriteLine("Denom: " + finalDenom);
+            
             return finalDenom.ToString();
         }        
     }

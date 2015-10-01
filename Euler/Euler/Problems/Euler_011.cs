@@ -176,8 +176,6 @@ namespace Euler
                 long sum = numbers[i] * numbers[i + 1] * numbers[i + 2] * numbers[i + 3];
                 if (sum > max)
                 {
-                    //	Console.WriteLine ("Digits: " + numbers[i] + ", " + numbers[i + 1] + ", " + numbers[i + 2] + ", " + numbers[i+3]);
-                    //	Console.WriteLine ("Sum: " + sum);
                     max = sum;
                 }
             }

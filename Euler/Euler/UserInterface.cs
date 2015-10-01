@@ -23,7 +23,7 @@ namespace Euler.Euler
             {                
                 Console.Write("Please enter a number [q to quit]: ");                
                 string input = Console.ReadLine();
-                if (input == "q") break;
+                if (input == "q" || input == "") break;
 
                 Console.Clear();
                 var result = eulerImplementations.Where(a => a.Number == int.Parse(input)).FirstOrDefault();

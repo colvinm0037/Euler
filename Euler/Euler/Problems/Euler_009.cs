@@ -42,10 +42,8 @@ namespace Euler
                         {
                             int sum = i + k + m;
                             if (sum == 1000)
-                            {
-                                // Console.WriteLine(i + ", " + k + ", " + m);
-                                long product = i * k * m;
-                                // Console.WriteLine("Sum:" + product);
+                            {                                
+                                long product = i * k * m;                             
                                 return product.ToString();
                             }
                         }

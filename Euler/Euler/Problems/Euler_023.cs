@@ -38,7 +38,7 @@ namespace Euler
             // Build list of all abundant numbers less than 28123
             for (int i = 1; i <= 28123; i++)
             {
-                if (SumOfProperDivisors(i) > i)
+                if (UsefulFunctions.SumOfProperDivisors(i) > i)
                     numbers.Add(i);
             }
 
@@ -52,8 +52,6 @@ namespace Euler
                 }
             }
 
-            //Console.WriteLine(allNumbers.Count());
-            //Console.WriteLine(numbers.Count());
             long total = 0;
 
             // Sum every number under 28123 that is not in pair set
@@ -61,26 +59,11 @@ namespace Euler
             {
                 if (!allNumbers.Contains(i))
                 {
-                    //Console.WriteLine("adding " + i);
                     total += i;
                 }
             }
 
             return total.ToString();
         }
-
-        private static int SumOfProperDivisors(int number)
-        {
-            int sum = 0;
-
-            for (int i = 1; i <= number / 2; i++)
-            {
-                if (number % i == 0)
-                {
-                    sum += i;
-                }
-            }
-            return sum;
-        }      
     }
 }

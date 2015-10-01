@@ -36,7 +36,7 @@ namespace Euler
                 for (int k = 999; k > 0; k--)
                 {
                     int number = i * k;
-                    if (isPalindrome(number))
+                    if (UsefulFunctions.isPalindrome(number))
                     {
                         if (number > max)
                             max = number;
@@ -45,26 +45,6 @@ namespace Euler
             }
 
             return max.ToString();
-        }
-
-        private static bool isPalindrome(int number)
-        {
-            String s = number.ToString();
-            Stack stack = new Stack();
-
-            for (int i = 0; i < s.Length; i++)
-            {
-                stack.Push(s[i]);
-            }
-
-            for (int i = 0; i < s.Length; i++)
-            {
-                char ch = (char)stack.Pop();
-                if (s[i] != ch)
-                    return false;
-            }
-
-            return true;
-        }        
+        }      
     }
 }

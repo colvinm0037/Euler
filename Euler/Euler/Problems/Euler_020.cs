@@ -33,11 +33,8 @@ namespace Euler
         private string Main()
         {
             BigInteger number = BigInteger.Parse("100");
-            BigInteger result = Factorial(number);
+            BigInteger result = UsefulFunctions.Factorial(number);
             String digits = result.ToString();
-
-            // Console.WriteLine(result);
-            // Console.WriteLine(digits);
 
             int sum = 0;
             for (int i = 0; i < digits.Length; i++)
@@ -47,13 +44,6 @@ namespace Euler
 
             return sum.ToString();
         }
-
-        private static BigInteger Factorial(BigInteger number)
-        {
-            if (number == 1)
-                return BigInteger.One;
-            else
-                return number * Factorial(number - BigInteger.One);
-        }        
+               
     }
 }

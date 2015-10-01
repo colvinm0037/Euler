@@ -78,14 +78,11 @@ namespace Euler
                         word = digits[hundredsDigit] + hundred + and + bigDigits[tensDigit] + digits[onesDigit];
                     }
                 }
-
-              //  Console.WriteLine(word);
+                            
                 sum += word.Length;
             }
-
-            //Console.WriteLine(onethousand);
-            sum += onethousand.Length;
-            //Console.WriteLine(sum);
+                        
+            sum += onethousand.Length;            
             return sum.ToString();
         }    
     }
