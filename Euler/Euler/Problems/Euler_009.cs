@@ -30,6 +30,8 @@ namespace Euler
 
         private string Main()
         {
+            // TODO: I'm sure I can do this better
+
             for (int i = 1; i < 1000; i++)
             {
                 for (int k = i; k < 1000; k++)
