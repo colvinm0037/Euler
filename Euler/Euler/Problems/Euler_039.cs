@@ -43,7 +43,6 @@ namespace Euler
                         int k = p - (i + j);
                         if (i * i + j * j == k * k)
                         {
-                            //	Console.WriteLine (i + "," + j + "," + k);
                             count++;
                         }
                     }
@@ -55,9 +54,7 @@ namespace Euler
                     maxP = p;
                 }
             }
-
-            //Console.WriteLine("Count: " + maxCount);
-            //Console.WriteLine("p: " + maxP);
+            
             return maxP.ToString();
         }       
     }

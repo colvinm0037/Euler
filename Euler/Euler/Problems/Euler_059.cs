@@ -33,6 +33,8 @@ namespace Euler
 
         string Main()
         {
+            // TODO: Fix hardcoded .txt file path
+
 	        // Build all possible passwords
 	        List<List<int>> passwords = new List<List<int>>();
 	        for (int i = 97; i <= 122; i++)

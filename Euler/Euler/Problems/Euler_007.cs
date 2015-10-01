@@ -36,7 +36,7 @@ namespace Euler
             {
                 i += 2;
 
-                if (UsefulFunctions.isPrime(i))
+                if (UsefulFunctions.IsPrime(i))
                 {
                     primeCount++;
                     if (primeCount == 10001)

@@ -34,30 +34,13 @@ namespace Euler
             long sum = 0;
             for (int i = 0; i < 1000000; i++)
             {
-                if (isPalindrome(i) && isPalindrome(Convert.ToString(i, 2)))
+                if (UsefulFunctions.isPalindrome(i) && UsefulFunctions.isPalindrome(Convert.ToString(i, 2)))
                 {
                     Console.WriteLine(i + " and " + Convert.ToString(i, 2) + " are palindromes");
                     sum += i;
                 }
             }
             return sum.ToString();
-        }
-
-        private static bool isPalindrome<T>(T number)
-        {
-            String s = number.ToString();
-            Stack stack = new Stack();
-
-            for (int i = 0; i < s.Length; i++)
-                stack.Push(s[i]);
-
-            for (int i = 0; i < s.Length; i++)
-            {
-                char ch = (char)stack.Pop();
-                if (s[i] != ch)
-                    return false;
-            }
-            return true;
-        }        
+        }     
     }
 }

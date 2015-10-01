@@ -30,14 +30,11 @@ namespace Euler
 
         private string Main()
         {
-            // We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once. For example, 2143 is a 4-digit pandigital and is also prime.
-            // What is the largest n-digit pandigital prime that exists?
-
             string result = "";
             permutation("", "1234567");
             foreach (long number in numbers.OrderByDescending(x => x))
             {
-                if (IsPrime(number))
+                if (UsefulFunctions.IsPrime(number))
                 {
                     result = number.ToString();
                     break;
@@ -59,19 +56,5 @@ namespace Euler
                     permutation(prefix + str[i], str.Substring(0, i) + str.Substring(i + 1, n - i - 1));
             }
         }
-
-        private static bool IsPrime(long number)
-        {
-            if (number % 2 == 0)
-                return false;
-
-            for (int i = 3; i < number / 2; i = i + 2)
-            {
-                if (number % i == 0)
-                    return false;
-            }
-
-            return true;
-        }   
     }
 }

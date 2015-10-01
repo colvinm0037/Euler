@@ -39,7 +39,7 @@ namespace Euler
             long n = 250000;
             int factors = 4;
 
-            bool[] primes = findPrimes(n); // bool array of what numbers are prime up to n
+            bool[] primes = UsefulFunctions.findPrimes(n); // bool array of what numbers are prime up to n
             primeValues = Enumerable.Range(0, (int)n).Where(i => primes[i]).ToList(); // list of all primes less than n
 
             int count = 0;
@@ -88,24 +88,5 @@ namespace Euler
 
             return distinctPrimes == factors;
         }
-
-        bool[] findPrimes(long number)
-        {
-            bool[] myArray = new bool[number];
-            for (long i = 2; i < number; i++)
-                myArray[i] = true;
-
-            for (int k = 2; k < Math.Sqrt(number); k++)
-            {
-                if (myArray[k])
-                {
-                    for (int m = k * k; m < number; m += k)
-                        myArray[m] = false;
-                }
-            }
-
-            return myArray;
-        }
-        
     }
 }

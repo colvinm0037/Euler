@@ -40,7 +40,7 @@ namespace Euler
             int m = 1000000;
             double maxRatio = 0;
             int finalN = 0;
-            bool[] primes = findPrimes(m);
+            bool[] primes = UsefulFunctions.findPrimes(m);
             primeValues = Enumerable.Range(0, (int)m).Where(i => primes[i]).ToList();
 
             for (int n = 2; n < m; n = n + 2)
@@ -91,24 +91,6 @@ namespace Euler
             }
 
             return factors;
-        }
-
-        bool[] findPrimes(long number)
-        {
-            bool[] myArray = new bool[number];
-            for (long i = 2; i < number; i++)
-                myArray[i] = true;
-
-            for (int k = 2; k < Math.Sqrt(number); k++)
-            {
-                if (myArray[k])
-                {
-                    for (int m = k * k; m < number; m += k)
-                        myArray[m] = false;
-                }
-            }
-
-            return myArray;
         }
     }
 }

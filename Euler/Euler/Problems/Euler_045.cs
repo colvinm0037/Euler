@@ -44,8 +44,6 @@ namespace Euler
                 count++;
                 if (hexagonals.Contains(number) && pentagonals.Contains(number))
                 {
-                    // Console.WriteLine(number);
-                    // Console.WriteLine("Count: " + count);
                     result = number;
                 }
             }

@@ -33,7 +33,7 @@ namespace Euler
         string Main()
         {     
             int n = 10000;
-            bool[] primes = findPrimes(n);
+            bool[] primes = UsefulFunctions.findPrimes(n);
             var primeValues = Enumerable.Range(0, (int)n).Where(i => primes[i]).ToList();
 
             foreach (int prime in primeValues)
@@ -72,24 +72,6 @@ namespace Euler
                 }
             }
             return "";
-        }
-
-        bool[] findPrimes(long number)
-        {
-            bool[] myArray = new bool[number];
-            for (long i = 2; i < number; i++)
-                myArray[i] = true;
-
-            for (int k = 2; k < Math.Sqrt(number); k++)
-            {
-                if (myArray[k])
-                {
-                    for (int m = k * k; m < number; m += k)
-                        myArray[m] = false;
-                }
-            }
-
-            return myArray;
         }
     }
 }

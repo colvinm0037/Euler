@@ -44,7 +44,6 @@ namespace Euler
                     sum += (long)Math.Pow((int)Char.GetNumericValue(c), 5);
                 if (sum == i)
                 {
-                    Console.WriteLine(i);
                     totalSum += i;
                 }
             }

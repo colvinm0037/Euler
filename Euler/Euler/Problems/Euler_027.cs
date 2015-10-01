@@ -36,15 +36,9 @@ namespace Euler
 
         private string Main()
         {
-            //	Considering quadratics of the form:
-            //	n² + an + b, where |a| < 1000 and |b| < 1000
-            //	where |n| is the modulus/absolute value of n
-            //	e.g. |11| = 11 and |−4| = 4
-            //	Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.
-
             int maxConsecutivePrimes = 0;
             int product = 0;
-            bool[] primes = findPrimes(1000000);
+            bool[] primes = UsefulFunctions.findPrimes(1000000);
 
             for (int a = -1000; a <= 1000; a++)
             {
@@ -76,27 +70,7 @@ namespace Euler
                 }
             }
 
-            //Console.WriteLine("Max Consecutive Primes: " + maxConsecutivePrimes);
-            //Console.WriteLine("Product of a and b: " + product);
             return product.ToString();
-        }
-
-        private bool[] findPrimes(long number)
-        {
-            bool[] myArray = new bool[number];
-            for (long i = 2; i < number; i++)
-                myArray[i] = true;
-
-            for (int k = 2; k < Math.Sqrt(number); k++)
-            {
-                if (myArray[k])
-                {
-                    for (int m = k * k; m < number; m += k)
-                        myArray[m] = false;
-                }
-            }
-
-            return myArray;
         }
     }
 }

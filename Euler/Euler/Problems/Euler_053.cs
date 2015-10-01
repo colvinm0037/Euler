@@ -41,7 +41,7 @@ namespace Euler
             {
                 for (int r = 1; r <= n; r++)
                 {
-                    BigInteger amount = (Factorial(n)) / ((Factorial(r)) * (Factorial(n - r)));
+                    BigInteger amount = (UsefulFunctions.Factorial(n)) / ((UsefulFunctions.Factorial(r)) * (UsefulFunctions.Factorial(n - r)));
                     if (amount > 1000000)
                     {            
                         count++;
@@ -50,14 +50,6 @@ namespace Euler
             }
                         
             return count.ToString();
-        }
-
-        BigInteger Factorial(BigInteger number)
-        {
-            if (number <= 1)
-                return BigInteger.One;
-            else
-                return number * Factorial(number - 1);
         }
     }
 }

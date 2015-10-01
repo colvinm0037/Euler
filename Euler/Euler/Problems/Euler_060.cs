@@ -30,7 +30,7 @@ namespace Euler
 
         string Main()
         {
-	        primes = findPrimes(100000000);
+	        primes = UsefulFunctions.findPrimes(100000000);
 	        var primeValues = Enumerable.Range(0, 10000).Where(x => primes[x]).ToList();
 
 	        foreach (int i in primeValues)
@@ -59,24 +59,6 @@ namespace Euler
 		        }
 	        }
             return "";
-        }
-
-        bool[] findPrimes(int number)
-        {
-	        bool[] myArray = new bool[number];
-	        for (int i = 2; i < number; i++)
-		        myArray[i] = true;
-
-	        for (int k = 2; k < Math.Sqrt(number); k++)
-	        {
-		        if (myArray[k])
-		        {
-			        for (int m = k * k; m < number; m += k)
-				        myArray[m] = false;
-		        }
-	        }
-
-	        return myArray;
         }
 
         bool IsMagical(List<int> set)

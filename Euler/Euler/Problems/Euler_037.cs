@@ -30,7 +30,7 @@ namespace Euler
 
         private string Main()
         {
-            bool[] primes = findPrimes(1000000);
+            bool[] primes = UsefulFunctions.findPrimes(1000000);
             bool fullyPrime = false;
             int sum = 0;
             for (int i = 9; i < 1000000; i = i + 2)
@@ -70,30 +70,11 @@ namespace Euler
                     }
                     if (fullyPrime)
                     {
-                        // Console.WriteLine(i + " Fully Prime!");
                         sum += i;
                     }
                 }
             }
             return sum.ToString();
-        }
-
-        private static bool[] findPrimes(int number)
-        {
-            bool[] myArray = new bool[number];
-            for (int i = 2; i < number; i++)
-                myArray[i] = true;
-
-            for (int k = 2; k < Math.Sqrt(number); k++)
-            {
-                if (myArray[k])
-                {
-                    for (int m = k * k; m < number; m += k)
-                        myArray[m] = false;
-                }
-            }
-
-            return myArray;
         }
     }
 }

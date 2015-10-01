@@ -29,7 +29,7 @@ namespace Euler.Euler
             return myArray;
         }
 
-        public static bool isPrime(int number)
+        public static bool IsPrime(long number)
         {
             if (number < 2)
                 return false;
@@ -49,15 +49,13 @@ namespace Euler.Euler
             return true;
         }
 
-        public static bool isPalindrome(int number)
+        public static bool isPalindrome<T>(T number)
         {
             String s = number.ToString();
             Stack stack = new Stack();
 
             for (int i = 0; i < s.Length; i++)
-            {
                 stack.Push(s[i]);
-            }
 
             for (int i = 0; i < s.Length; i++)
             {
@@ -65,7 +63,6 @@ namespace Euler.Euler
                 if (s[i] != ch)
                     return false;
             }
-
             return true;
         }
 
