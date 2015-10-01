@@ -31,13 +31,11 @@ namespace Euler
 
         private string Main()
         {
-            // TODO: Fix file path hardcoding, add text file to project
-
             List<string> names = new List<string>();
             string line = null;
             try
             {
-                using (StreamReader sr = new StreamReader("C:\\Users\\COLVINM\\Documents\\LINQPad Queries\\p022_names.txt"))
+                using (StreamReader sr = new StreamReader("Euler\\Resources\\p022_names.txt"))
                 {
                     while ((line = sr.ReadLine()) != null)
                     {                        

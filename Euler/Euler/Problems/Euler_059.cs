@@ -23,7 +23,7 @@ namespace Euler
 
         public int Number
         {
-            get { return 57; }
+            get { return 59; }
         }
 
         public string Description
@@ -33,8 +33,6 @@ namespace Euler
 
         string Main()
         {
-            // TODO: Fix hardcoded .txt file path
-
 	        // Build all possible passwords
 	        List<List<int>> passwords = new List<List<int>>();
 	        for (int i = 97; i <= 122; i++)
@@ -54,7 +52,7 @@ namespace Euler
 	        var values = new List<string>();
 	        try
 	        {
-		        using (StreamReader sr = new StreamReader("C:\\Users\\COLVINM\\Documents\\LINQPad Queries\\p059_cipher.txt"))
+		        using (StreamReader sr = new StreamReader("Euler\\Resources\\p059_cipher.txt"))
 		        {
 			        while ((line = sr.ReadLine()) != null)
 				        values = line.Split(',').ToList();				
