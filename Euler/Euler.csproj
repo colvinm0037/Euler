@@ -50,6 +50,7 @@
     <Compile Include="Challenges\Challenge_Week_4.cs" />
     <Compile Include="Challenges\Challenge_Week_6_Level_2 .cs" />
     <Compile Include="Challenges\Challenge_Week_6_Level_1.cs" />
+    <Compile Include="Euler\Answers.cs" />
     <Compile Include="Euler\IEulerProblem.cs" />
     <Compile Include="Euler\Problems\Euler_001.cs" />
     <Compile Include="Euler\Problems\Euler_002.cs" />
