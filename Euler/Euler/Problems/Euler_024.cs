@@ -35,7 +35,7 @@ namespace Euler
         {
             permutation(" ", "1234567890");
             List<string> sorted = numbers.OrderBy(x => x).ToList();
-            return sorted[999999].ToString();
+            return sorted[999999].ToString().Substring(1);
         }
 
         void permutation(String prefix, String str)

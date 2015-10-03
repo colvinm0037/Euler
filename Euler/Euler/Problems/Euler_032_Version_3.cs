@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_032_Version_3 : IEulerProblem
+    public class Euler_032_Version_3 : IEulerProblem
     {
         private List<string> numbers = new List<string>();
         private string _description = "We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital." + 

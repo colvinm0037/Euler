@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_031 : IEulerProblem
+    public class Euler_031 : IEulerProblem
     {
         private string _description = "In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:" +
             "\n\n1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p)." +

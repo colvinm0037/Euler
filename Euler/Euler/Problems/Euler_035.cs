@@ -32,7 +32,7 @@ namespace Euler
         {
             bool[] primes = UsefulFunctions.findPrimes(1000000);
             bool fullyPrime = false;
-            int count = 0;
+            int count = 1;
             for (int i = 3; i < 1000000; i = i + 2)
             {
                 if (primes[i])

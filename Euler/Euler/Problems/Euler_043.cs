@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Euler
 {
-    class Euler_043 : IEulerProblem
+    public class Euler_043 : IEulerProblem
     {
         private List<long> numbers = new List<long>();
         private int[] primes = new int[] { 2, 3, 5, 7, 11, 13, 17 };
